@@ -37,5 +37,5 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@users.noreply.github.com
           git add .
-          git commit -m "persist tokens trigger by ${{ github.event_name }}"
+          git diff --cached --quiet || git commit -m "persist tokens trigger by ${{ github.event_name }}"
           git push origin master
